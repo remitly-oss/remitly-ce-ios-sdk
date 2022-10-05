@@ -1,0 +1,453 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 55;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		015CA24F28E3826B00C133A1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 015CA24E28E3826B00C133A1 /* AppDelegate.swift */; };
+		015CA25128E3826B00C133A1 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 015CA25028E3826B00C133A1 /* SceneDelegate.swift */; };
+		015CA25328E3826B00C133A1 /* SendViewController_swift.swift in Sources */ = {isa = PBXBuildFile; fileRef = 015CA25228E3826B00C133A1 /* SendViewController_swift.swift */; };
+		015CA25628E3826B00C133A1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 015CA25428E3826B00C133A1 /* Main.storyboard */; };
+		015CA25828E3826C00C133A1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 015CA25728E3826C00C133A1 /* Assets.xcassets */; };
+		015CA25B28E3826C00C133A1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 015CA25928E3826C00C133A1 /* LaunchScreen.storyboard */; };
+		01705A4328E62CEC00A514AB /* SendViewController_objc.m in Sources */ = {isa = PBXBuildFile; fileRef = 01705A4228E62CEC00A514AB /* SendViewController_objc.m */; };
+		B78E5690129CC481C493B3DE /* Pods_SendWithRemitly.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EF1FD1866806EE60680140D9 /* Pods_SendWithRemitly.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		015CA24B28E3826B00C133A1 /* SendWithRemitly.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SendWithRemitly.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		015CA24E28E3826B00C133A1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		015CA25028E3826B00C133A1 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		015CA25228E3826B00C133A1 /* SendViewController_swift.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SendViewController_swift.swift; sourceTree = "<group>"; };
+		015CA25528E3826B00C133A1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		015CA25728E3826C00C133A1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		015CA25A28E3826C00C133A1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		015CA25C28E3826C00C133A1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		01705A4028E62CEC00A514AB /* SendWithRemitly-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "SendWithRemitly-Bridging-Header.h"; sourceTree = "<group>"; };
+		01705A4128E62CEC00A514AB /* SendViewController_objc.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SendViewController_objc.h; sourceTree = "<group>"; };
+		01705A4228E62CEC00A514AB /* SendViewController_objc.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SendViewController_objc.m; sourceTree = "<group>"; };
+		79827B8EAEF9E8C4579629DF /* Pods-Examples-CocoaPods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Examples-CocoaPods.debug.xcconfig"; path = "Target Support Files/Pods-Examples-CocoaPods/Pods-Examples-CocoaPods.debug.xcconfig"; sourceTree = "<group>"; };
+		80E43C0F47DB9EF7DA625C92 /* Pods-SendWithRemitly.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SendWithRemitly.debug.xcconfig"; path = "Target Support Files/Pods-SendWithRemitly/Pods-SendWithRemitly.debug.xcconfig"; sourceTree = "<group>"; };
+		82ED2C36DBA9C10C9A787217 /* Pods-SendWithRemitly.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SendWithRemitly.release.xcconfig"; path = "Target Support Files/Pods-SendWithRemitly/Pods-SendWithRemitly.release.xcconfig"; sourceTree = "<group>"; };
+		DF3839CD822A834166F02C10 /* Pods-Examples-CocoaPods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Examples-CocoaPods.release.xcconfig"; path = "Target Support Files/Pods-Examples-CocoaPods/Pods-Examples-CocoaPods.release.xcconfig"; sourceTree = "<group>"; };
+		EF1FD1866806EE60680140D9 /* Pods_SendWithRemitly.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SendWithRemitly.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		015CA24828E3826B00C133A1 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B78E5690129CC481C493B3DE /* Pods_SendWithRemitly.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		015CA24228E3826B00C133A1 = {
+			isa = PBXGroup;
+			children = (
+				015CA24D28E3826B00C133A1 /* Sources */,
+				015CA24C28E3826B00C133A1 /* Products */,
+				05D7C14B5981BF5A45C8A938 /* Pods */,
+				AEF910A6E7102BDC33FB6DC2 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		015CA24C28E3826B00C133A1 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				015CA24B28E3826B00C133A1 /* SendWithRemitly.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		015CA24D28E3826B00C133A1 /* Sources */ = {
+			isa = PBXGroup;
+			children = (
+				015CA25C28E3826C00C133A1 /* Info.plist */,
+				015CA25728E3826C00C133A1 /* Assets.xcassets */,
+				015CA25928E3826C00C133A1 /* LaunchScreen.storyboard */,
+				015CA25428E3826B00C133A1 /* Main.storyboard */,
+				015CA24E28E3826B00C133A1 /* AppDelegate.swift */,
+				015CA25028E3826B00C133A1 /* SceneDelegate.swift */,
+				015CA25228E3826B00C133A1 /* SendViewController_swift.swift */,
+				01705A4128E62CEC00A514AB /* SendViewController_objc.h */,
+				01705A4228E62CEC00A514AB /* SendViewController_objc.m */,
+				01705A4028E62CEC00A514AB /* SendWithRemitly-Bridging-Header.h */,
+			);
+			path = Sources;
+			sourceTree = "<group>";
+		};
+		05D7C14B5981BF5A45C8A938 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				79827B8EAEF9E8C4579629DF /* Pods-Examples-CocoaPods.debug.xcconfig */,
+				DF3839CD822A834166F02C10 /* Pods-Examples-CocoaPods.release.xcconfig */,
+				80E43C0F47DB9EF7DA625C92 /* Pods-SendWithRemitly.debug.xcconfig */,
+				82ED2C36DBA9C10C9A787217 /* Pods-SendWithRemitly.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		AEF910A6E7102BDC33FB6DC2 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				EF1FD1866806EE60680140D9 /* Pods_SendWithRemitly.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		015CA24A28E3826B00C133A1 /* SendWithRemitly */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 015CA25F28E3826C00C133A1 /* Build configuration list for PBXNativeTarget "SendWithRemitly" */;
+			buildPhases = (
+				211658522284C0108EF57D6A /* [CP] Check Pods Manifest.lock */,
+				015CA24728E3826B00C133A1 /* Sources */,
+				015CA24828E3826B00C133A1 /* Frameworks */,
+				015CA24928E3826B00C133A1 /* Resources */,
+				4D3CF576746F87500094D35E /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = SendWithRemitly;
+			productName = "Examples-CocoaPods";
+			productReference = 015CA24B28E3826B00C133A1 /* SendWithRemitly.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		015CA24328E3826B00C133A1 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1320;
+				LastUpgradeCheck = 1320;
+				TargetAttributes = {
+					015CA24A28E3826B00C133A1 = {
+						CreatedOnToolsVersion = 13.2.1;
+						LastSwiftMigration = 1320;
+					};
+				};
+			};
+			buildConfigurationList = 015CA24628E3826B00C133A1 /* Build configuration list for PBXProject "Examples-CocoaPods" */;
+			compatibilityVersion = "Xcode 13.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 015CA24228E3826B00C133A1;
+			productRefGroup = 015CA24C28E3826B00C133A1 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				015CA24A28E3826B00C133A1 /* SendWithRemitly */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		015CA24928E3826B00C133A1 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				015CA25B28E3826C00C133A1 /* LaunchScreen.storyboard in Resources */,
+				015CA25828E3826C00C133A1 /* Assets.xcassets in Resources */,
+				015CA25628E3826B00C133A1 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		211658522284C0108EF57D6A /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-SendWithRemitly-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		4D3CF576746F87500094D35E /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-SendWithRemitly/Pods-SendWithRemitly-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-SendWithRemitly/Pods-SendWithRemitly-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-SendWithRemitly/Pods-SendWithRemitly-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		015CA24728E3826B00C133A1 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				015CA25328E3826B00C133A1 /* SendViewController_swift.swift in Sources */,
+				015CA24F28E3826B00C133A1 /* AppDelegate.swift in Sources */,
+				01705A4328E62CEC00A514AB /* SendViewController_objc.m in Sources */,
+				015CA25128E3826B00C133A1 /* SceneDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		015CA25428E3826B00C133A1 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				015CA25528E3826B00C133A1 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		015CA25928E3826C00C133A1 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				015CA25A28E3826C00C133A1 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		015CA25D28E3826C00C133A1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		015CA25E28E3826C00C133A1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		015CA26028E3826C00C133A1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 80E43C0F47DB9EF7DA625C92 /* Pods-SendWithRemitly.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 9GVV2WVHAT;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Sources/Info.plist;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.remitly.Examples-CocoaPods";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "Sources/SendWithRemitly-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		015CA26128E3826C00C133A1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 82ED2C36DBA9C10C9A787217 /* Pods-SendWithRemitly.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 9GVV2WVHAT;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Sources/Info.plist;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.remitly.Examples-CocoaPods";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "Sources/SendWithRemitly-Bridging-Header.h";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		015CA24628E3826B00C133A1 /* Build configuration list for PBXProject "Examples-CocoaPods" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				015CA25D28E3826C00C133A1 /* Debug */,
+				015CA25E28E3826C00C133A1 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		015CA25F28E3826C00C133A1 /* Build configuration list for PBXNativeTarget "SendWithRemitly" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				015CA26028E3826C00C133A1 /* Debug */,
+				015CA26128E3826C00C133A1 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 015CA24328E3826B00C133A1 /* Project object */;
+}

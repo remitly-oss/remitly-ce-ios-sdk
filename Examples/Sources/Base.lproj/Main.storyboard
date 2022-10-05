@@ -1,0 +1,264 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="pcZ-W4-G1f">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Tab Bar Controller-->
+        <scene sceneID="0VS-61-ctz">
+            <objects>
+                <tabBarController id="pcZ-W4-G1f" sceneMemberID="viewController">
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="8vK-6G-B39">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="3iX-sv-Srr" kind="relationship" relationship="viewControllers" id="WqO-JK-Jo2"/>
+                        <segue destination="b5T-kH-Lxl" kind="relationship" relationship="viewControllers" id="8ko-iz-2oU"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="x7m-Dv-WXd" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-3114" y="144"/>
+        </scene>
+        <!--Swift-->
+        <scene sceneID="hwt-ss-SWX">
+            <objects>
+                <navigationController id="3iX-sv-Srr" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Swift" id="7W5-Nm-ZlU"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Nw7-zf-w2T">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="WNV-CG-Wzn"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="3w0-bx-YhA" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1958" y="-175"/>
+        </scene>
+        <!--Send View Controller swift-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="SendViewController_swift" customModule="SendWithRemitly" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Go8-Tg-jrx">
+                                <rect key="frame" x="20" y="88" width="374" height="60"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="60" id="kPg-uJ-s2v"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled" titleAlignment="center">
+                                    <attributedString key="attributedTitle">
+                                        <fragment content="Send with Remitly (segue)">
+                                            <attributes>
+                                                <font key="NSFont" size="17" name="Helvetica"/>
+                                                <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                            </attributes>
+                                        </fragment>
+                                    </attributedString>
+                                </buttonConfiguration>
+                                <connections>
+                                    <segue destination="LzI-bR-OwE" kind="presentation" id="qC6-Kv-yyl"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="trX-EA-98R">
+                                <rect key="frame" x="19" y="201" width="375" height="60"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="60" id="rFx-zS-0wH"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled" titleAlignment="center">
+                                    <attributedString key="attributedTitle">
+                                        <fragment content="Send with Remitly (programmatic)">
+                                            <attributes>
+                                                <font key="NSFont" size="17" name="Helvetica"/>
+                                                <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                            </attributes>
+                                        </fragment>
+                                    </attributedString>
+                                </buttonConfiguration>
+                                <connections>
+                                    <action selector="onShowRemitly" destination="BYZ-38-t0r" eventType="touchUpInside" id="jY7-Eg-CRc"/>
+                                </connections>
+                            </button>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="5tt-fb-ckm">
+                                <rect key="frame" x="20" y="323" width="374" height="543"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <color key="textColor" systemColor="labelColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="5tt-fb-ckm" firstAttribute="top" secondItem="trX-EA-98R" secondAttribute="bottom" constant="62" id="0MG-XZ-tsU"/>
+                            <constraint firstItem="5tt-fb-ckm" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="6Am-YL-ULK"/>
+                            <constraint firstItem="trX-EA-98R" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="19" id="CV4-EG-lBh"/>
+                            <constraint firstItem="Go8-Tg-jrx" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="JQ1-93-qsp"/>
+                            <constraint firstItem="Go8-Tg-jrx" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="SBo-5X-JEr"/>
+                            <constraint firstItem="trX-EA-98R" firstAttribute="top" secondItem="Go8-Tg-jrx" secondAttribute="bottom" constant="53" id="Sf9-Ur-U1i"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="trX-EA-98R" secondAttribute="trailing" constant="20" id="Y61-nP-aV4"/>
+                            <constraint firstAttribute="bottom" secondItem="5tt-fb-ckm" secondAttribute="bottom" constant="30" id="YJG-5e-5pp"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="5tt-fb-ckm" secondAttribute="trailing" constant="20" id="mFS-Bo-koN"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Go8-Tg-jrx" secondAttribute="trailing" constant="20" id="y1r-gc-9dc"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="a7E-Mx-fII"/>
+                    <connections>
+                        <outlet property="eventsLog" destination="5tt-fb-ckm" id="IAf-ug-ksp"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1220.2898550724638" y="-175.44642857142856"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="Gfz-en-uvW">
+            <objects>
+                <viewController id="LzI-bR-OwE" customClass="RECEViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="K09-fK-LSm">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="dgG-vc-cCy"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Z2K-gd-JoK" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-517" y="-175"/>
+        </scene>
+        <!--ObjC-->
+        <scene sceneID="ZXV-ze-Rgs">
+            <objects>
+                <navigationController id="b5T-kH-Lxl" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="ObjC" id="m9o-z2-p2W"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="kg0-eH-Nko">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="js5-Yz-8lF" kind="relationship" relationship="rootViewController" id="usY-aA-v8H"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="2rP-HA-uJ1" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1959" y="502"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="PW3-7r-LAq">
+            <objects>
+                <viewController id="9HK-tU-WWq" customClass="RECEViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="IYj-WM-QM6">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="6f2-9F-b4S"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="XWd-sq-wFP" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-517" y="502"/>
+        </scene>
+        <!--Send View Controller objc-->
+        <scene sceneID="eag-pV-aaY">
+            <objects>
+                <viewController id="js5-Yz-8lF" customClass="SendViewController_objc" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="uBW-NL-hS6">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9fD-D7-izh">
+                                <rect key="frame" x="20" y="88" width="374" height="60"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="60" id="oJi-aj-sr6"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled" titleAlignment="center">
+                                    <attributedString key="attributedTitle">
+                                        <fragment content="Send with Remitly (segue)">
+                                            <attributes>
+                                                <font key="NSFont" size="17" name="Helvetica"/>
+                                                <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                            </attributes>
+                                        </fragment>
+                                    </attributedString>
+                                </buttonConfiguration>
+                                <connections>
+                                    <segue destination="9HK-tU-WWq" kind="presentation" id="stD-Ga-gRN"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="q7X-Ro-DjL">
+                                <rect key="frame" x="19" y="201" width="375" height="60"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="60" id="R0J-wt-ama"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled" titleAlignment="center">
+                                    <attributedString key="attributedTitle">
+                                        <fragment content="Send with Remitly (programmatic)">
+                                            <attributes>
+                                                <font key="NSFont" size="17" name="Helvetica"/>
+                                                <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                            </attributes>
+                                        </fragment>
+                                    </attributedString>
+                                </buttonConfiguration>
+                                <connections>
+                                    <action selector="onShowRemitly:" destination="js5-Yz-8lF" eventType="touchUpInside" id="beB-Lj-TfE"/>
+                                </connections>
+                            </button>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="1SD-bk-7zl">
+                                <rect key="frame" x="20" y="323" width="374" height="543"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <color key="textColor" systemColor="labelColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="oYi-QF-VNa"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="oYi-QF-VNa" firstAttribute="trailing" secondItem="9fD-D7-izh" secondAttribute="trailing" constant="20" id="2F5-bu-4a4"/>
+                            <constraint firstItem="9fD-D7-izh" firstAttribute="leading" secondItem="oYi-QF-VNa" secondAttribute="leading" constant="20" id="4FF-Vo-Efu"/>
+                            <constraint firstItem="oYi-QF-VNa" firstAttribute="trailing" secondItem="q7X-Ro-DjL" secondAttribute="trailing" constant="20" id="5Hp-1I-U2E"/>
+                            <constraint firstAttribute="bottom" secondItem="1SD-bk-7zl" secondAttribute="bottom" constant="30" id="GF5-HN-Qvf"/>
+                            <constraint firstItem="9fD-D7-izh" firstAttribute="top" secondItem="oYi-QF-VNa" secondAttribute="top" id="Hus-a4-3ih"/>
+                            <constraint firstItem="q7X-Ro-DjL" firstAttribute="leading" secondItem="oYi-QF-VNa" secondAttribute="leading" constant="19" id="LCx-W0-ZfX"/>
+                            <constraint firstItem="1SD-bk-7zl" firstAttribute="leading" secondItem="oYi-QF-VNa" secondAttribute="leading" constant="20" id="O19-zS-1aJ"/>
+                            <constraint firstItem="1SD-bk-7zl" firstAttribute="top" secondItem="q7X-Ro-DjL" secondAttribute="bottom" constant="62" id="Vav-QY-lPy"/>
+                            <constraint firstItem="q7X-Ro-DjL" firstAttribute="top" secondItem="9fD-D7-izh" secondAttribute="bottom" constant="53" id="a7E-fx-e5B"/>
+                            <constraint firstItem="9fD-D7-izh" firstAttribute="top" secondItem="oYi-QF-VNa" secondAttribute="top" id="h1a-8d-kdY"/>
+                            <constraint firstItem="oYi-QF-VNa" firstAttribute="trailing" secondItem="1SD-bk-7zl" secondAttribute="trailing" constant="20" id="ovM-M7-Zbv"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="SX1-4k-TXp"/>
+                    <connections>
+                        <outlet property="_eventsLog" destination="1SD-bk-7zl" id="nNf-CM-uGU"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ywi-aI-jQ8" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1220" y="502"/>
+        </scene>
+    </scenes>
+    <resources>
+        <systemColor name="labelColor">
+            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

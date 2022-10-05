@@ -1,0 +1,7 @@
+platform :ios, '13.0'
+
+target 'SendWithRemitly' do
+  use_frameworks!
+
+  pod 'RemitlyCEKit', :path => '..'
+end

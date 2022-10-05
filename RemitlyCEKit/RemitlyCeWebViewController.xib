@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
+        <capability name="Image references" minToolsVersion="12.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="RemitlyCeWebViewController" customModule="RemitlyCEKit" customModuleProvider="target">
+            <connections>
+                <outlet property="activityView" destination="Zcd-aO-WmA" id="77Y-WJ-Kc1"/>
+                <outlet property="errorImageLabel" destination="yrb-Kf-CaO" id="Cb9-KC-riE"/>
+                <outlet property="errorImageView" destination="IJ2-SQ-AmV" id="qdL-Wk-wnT"/>
+                <outlet property="errorStackView" destination="suE-ZP-uAU" id="oaG-HN-2GS"/>
+                <outlet property="view" destination="iN0-l3-epB" id="YGk-g2-8AP"/>
+                <outlet property="webViewContainer" destination="oHo-ZP-g04" id="IDr-DD-2BL"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="oHo-ZP-g04">
+                    <rect key="frame" x="0.0" y="44" width="414" height="852"/>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                </view>
+                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="suE-ZP-uAU">
+                    <rect key="frame" x="80" y="423" width="254" height="50.5"/>
+                    <subviews>
+                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="IJ2-SQ-AmV">
+                            <rect key="frame" x="112.5" y="-2" width="29" height="23"/>
+                            <imageReference key="image" image="wifi.exclamationmark" catalog="system" symbolScale="large"/>
+                        </imageView>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yrb-Kf-CaO">
+                            <rect key="frame" x="106.5" y="30" width="41.5" height="20.5"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
+                </stackView>
+                <visualEffectView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Zcd-aO-WmA">
+                    <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                    <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="sSl-69-085">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" animating="YES" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="qHj-Xv-BXH">
+                                <rect key="frame" x="188.5" y="429.5" width="37" height="37"/>
+                            </activityIndicatorView>
+                        </subviews>
+                        <constraints>
+                            <constraint firstItem="qHj-Xv-BXH" firstAttribute="centerY" secondItem="sSl-69-085" secondAttribute="centerY" id="9fi-rW-M1T"/>
+                            <constraint firstItem="qHj-Xv-BXH" firstAttribute="centerX" secondItem="sSl-69-085" secondAttribute="centerX" id="ADp-iR-U0C"/>
+                        </constraints>
+                    </view>
+                    <blurEffect style="extraLight"/>
+                </visualEffectView>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+            <constraints>
+                <constraint firstAttribute="bottom" secondItem="Zcd-aO-WmA" secondAttribute="bottom" id="5yZ-fO-zrm"/>
+                <constraint firstItem="Zcd-aO-WmA" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="Cf5-zU-Prt"/>
+                <constraint firstItem="suE-ZP-uAU" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="PXw-mc-ItD"/>
+                <constraint firstItem="oHo-ZP-g04" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="QHh-jV-lFS"/>
+                <constraint firstAttribute="bottom" secondItem="oHo-ZP-g04" secondAttribute="bottom" id="Qba-Jr-1CF"/>
+                <constraint firstItem="Zcd-aO-WmA" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="Xoq-sq-5gT"/>
+                <constraint firstItem="suE-ZP-uAU" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="80" id="Xrh-Kf-mbW"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="oHo-ZP-g04" secondAttribute="trailing" id="aoZ-HB-mO9"/>
+                <constraint firstItem="Zcd-aO-WmA" firstAttribute="trailing" secondItem="vUN-kp-3ea" secondAttribute="trailing" id="bHZ-db-X95"/>
+                <constraint firstItem="oHo-ZP-g04" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" id="s0d-pw-VSp"/>
+                <constraint firstItem="suE-ZP-uAU" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="sPx-Ih-pSC"/>
+            </constraints>
+            <point key="canvasLocation" x="139" y="144"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="wifi.exclamationmark" catalog="system" width="128" height="96"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

@@ -1,4 +1,4 @@
-<img src="Remitly_Horizontal_Logo_Preferred_RGB_Indigo_192x44.png" width="192" title="Remitly Logo" />
+<img src=".github/Remitly_Horizontal_Logo_Preferred_RGB_Indigo_192x44.png" title="Remitly Logo" />
 
 # Remitly Connected Experiences SDK for iOS
 
@@ -30,13 +30,13 @@ RemitlyCE can be added to your app with as little as two lines of code.
 At minimum, RemitlyCE needs to be configured with your assigned `AppID` and `endpoint` values.   These can be configured in code or provided in your app's `Info.plist` (recommended):
 
 ```
-	<key>remitly</key>
-	<dict>
-		<key>appID</key>
-		<string>YOUR_APP_ID_HERE</string>
-		<key>endpoint</key>
-		<string>YOUR_ENDPOINT_URL_HERE</string>
-	</dict>
+    <key>remitly</key>
+    <dict>
+        <key>appID</key>
+        <string>YOUR_APP_ID_HERE</string>
+        <key>endpoint</key>
+        <string>YOUR_ENDPOINT_URL_HERE</string>
+    </dict>
 ```
 
 Then, in code prior to invoking the RemitlyCE UI:
@@ -75,9 +75,9 @@ Do NOT push the `RemitlyCeViewController` to a `UINavigationController` stack.  
 #### Swift
 
 ```
-        let remitlyCe = RemitlyCeViewController()
+    let remitlyCe = RemitlyCeViewController()
 
-        self.present(remitlyCe, animated: true, completion: nil)  // where `self` is an on-screen view controller
+    self.present(remitlyCe, animated: true, completion: nil)  // where `self` is an on-screen view controller
 ```
 
 #### Objective C

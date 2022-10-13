@@ -111,6 +111,7 @@ class RemitlyCeWebViewController: UIViewController, WKNavigationDelegate, WKScri
         
         navigationController?.setNavigationBarHidden(true, animated: false)
 
+        // injected script exposes `cesdk.postMessage()` to Narwhal
         let postMessageScript = WKUserScript(
             source: """
             window.cesdk = {
@@ -128,7 +129,8 @@ class RemitlyCeWebViewController: UIViewController, WKNavigationDelegate, WKScri
         wvc.suppressesIncrementalRendering = true
         wvc.dataDetectorTypes = []
         wvc.websiteDataStore = WKWebsiteDataStore.nonPersistent()
-
+        wvc.defaultWebpagePreferences.preferredContentMode = .mobile
+        
         wvc.userContentController.add(self, name: NarwhalMessageKey.handler.rawValue)
         wvc.userContentController.addUserScript(postMessageScript)
 

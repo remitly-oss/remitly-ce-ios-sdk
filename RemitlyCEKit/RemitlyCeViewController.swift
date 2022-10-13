@@ -31,7 +31,7 @@ import UIKit
         }
     }
     
-    public override var modalPresentationStyle: UIModalPresentationStyle {
+    public final override var modalPresentationStyle: UIModalPresentationStyle {
         get {
             return .pageSheet;
         }

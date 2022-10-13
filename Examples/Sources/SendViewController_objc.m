@@ -21,6 +21,14 @@
 
     [RECEConfiguration loadConfig];
     [RECEConfiguration setCustomerEmail: @"nick+0618@remitly.com"];
+    
+    if (@available(iOS 15.0, *)) {
+        for (UIButton* b in self.view.subviews) {
+            if ([b isKindOfClass: [UIButton class]]) {
+                b.configuration = UIButtonConfiguration.filledButtonConfiguration;
+            }
+        }
+    }
 }
 
 - (IBAction)onShowRemitly:(id)sender {

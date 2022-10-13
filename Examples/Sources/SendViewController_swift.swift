@@ -21,6 +21,12 @@ class SendViewController_swift: UIViewController, RemitlyCeViewControllerDelegat
         
         RemitlyCeConfiguration.loadConfig()
         RemitlyCeConfiguration.customerEmail = "nick+0618@remitly.com"
+        
+        if #available(iOS 15.0, *) {
+            view.subviews
+                .compactMap{ $0 as? UIButton }
+                .forEach{ $0.configuration = UIButton.Configuration.filled() }
+        }
     }
    
     @IBAction func onShowRemitly() {

@@ -14,4 +14,5 @@ Pod::Spec.new do |s|
     s.pod_target_xcconfig = {
         'GCC_PREPROCESSOR_DEFINITIONS' => 'RemitlyCE_VERSION=' + s.version.to_s
     }
+    s.dependency 'AnyCodable-FlightSchool', '~> 0.6.0'
 end

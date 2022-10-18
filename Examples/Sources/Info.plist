@@ -6,8 +6,8 @@
 	<dict>
 		<key>appID</key>
 		<string>demo</string>
-		<key>endpoint</key>
-		<string>https://preprod.dev.remitly.com</string>
+		<key>webEndpoint</key>
+		<string>https://www.remitly.com</string>
 		<key>defaultSendCountry</key>
 		<string>USA</string>
 	</dict>

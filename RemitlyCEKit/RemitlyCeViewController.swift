@@ -23,7 +23,7 @@ import UIKit
         }
     }
     
-    private var ceWebViewController = RemitlyCeWebViewController(url: try! RemitlyCeConfiguration.url)
+    private var ceWebViewController = RemitlyCeWebViewController(url: try! RemitlyCeConfiguration.webUrl)
     
     public override var navigationItem: UINavigationItem {
         get {

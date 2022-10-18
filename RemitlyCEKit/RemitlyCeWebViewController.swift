@@ -9,6 +9,7 @@ import Foundation
 import UIKit
 import WebKit
 import SafariServices
+import AnyCodable
 
 class RemitlyCeWebViewController: UIViewController, WKNavigationDelegate, WKScriptMessageHandler {
 
@@ -32,6 +33,11 @@ class RemitlyCeWebViewController: UIViewController, WKNavigationDelegate, WKScri
         case transferSubmitted = "transfer_submitted"
     }
     
+    enum CloseRequestKind: String {
+        case web = "web_close_button_pressed"
+        case native = "modal_close_button_pressed"
+    }
+        
     @IBOutlet private var webViewContainer: UIView!
     @IBOutlet private var activityView: UIVisualEffectView!
     @IBOutlet private var errorStackView: UIStackView!
@@ -75,10 +81,16 @@ class RemitlyCeWebViewController: UIViewController, WKNavigationDelegate, WKScri
     }
     private var error: Error? = nil {
         willSet(e) {
-            if let e = e {
+            if let e = e as? NSError {
                 errorStackView.isHidden = false
                 errorImageLabel.text = e.localizedDescription
                 isCloseButtonHidden = false
+                EventLogger.shared.logHumio(topic: "renderError", data: [
+                    "errorDesc": AnyCodable(e.localizedDescription),
+                    "errorDomain": AnyCodable(e.domain),
+                    "errorCode": AnyCodable(e.code),
+                    "url": AnyCodable(e.userInfo[NSURLErrorFailingURLStringErrorKey] ?? "")
+                ]);
             } else {
                 errorStackView.isHidden = true
             }
@@ -98,7 +110,7 @@ class RemitlyCeWebViewController: UIViewController, WKNavigationDelegate, WKScri
             image: UIImage(systemName: "xmark"),
             style: .done,
             target: self,
-            action: #selector(exitCE)
+            action: #selector(handleClose)
         )
     }
 
@@ -141,6 +153,11 @@ class RemitlyCeWebViewController: UIViewController, WKNavigationDelegate, WKScri
         webViewContainer.addSubview(webView)
 
         loadWeb()
+        
+        EventLogger.shared.logHumio(topic: "openWebView",
+                        data: [
+                            "url": AnyCodable(url)
+                        ])
     }
 
     func webView(_: WKWebView, didStartProvisionalNavigation _: WKNavigation!) {
@@ -213,7 +230,7 @@ class RemitlyCeWebViewController: UIViewController, WKNavigationDelegate, WKScri
             loadWeb()
             break
         case .exitCE:
-            exitCE()
+            exitCE(.web)
             break
         case .hideCloseButton:
             isCloseButtonHidden = true
@@ -239,6 +256,9 @@ class RemitlyCeWebViewController: UIViewController, WKNavigationDelegate, WKScri
         webView.configuration.websiteDataStore.httpCookieStore.getAllCookies { cookies in
             cookies.forEach { cookie in
                 HTTPCookieStorage.shared.setCookie(cookie)
+                if (cookie.name == "de_id") {
+                    RemitlyCeConfiguration.deviceEnvironmentId = cookie.value
+                }
             }
         }
     }
@@ -289,11 +309,20 @@ class RemitlyCeWebViewController: UIViewController, WKNavigationDelegate, WKScri
         }
     }
 
-    @objc private func exitCE() {
+    @objc private func handleClose() {
+        exitCE(.native)
+    }
+
+    private func exitCE(_ closeRequestKind: CloseRequestKind) {
         if self.presentingViewController != nil {
             self.dismiss(animated: true, completion: nil)
         } else {
             self.navigationController?.popViewController(animated: true)
         }
+        EventLogger.shared.logHumio(topic: "closeWebView",
+                        data: [
+                            "url": AnyCodable(self.url),
+                            "closeReason": AnyCodable(closeRequestKind.rawValue)
+                        ])
     }
 }

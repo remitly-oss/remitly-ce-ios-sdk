@@ -17,7 +17,15 @@ public enum RemitlyCeError: Error {
 }
 
 @objc(RECEConfiguration) public class RemitlyCeConfiguration: NSObject {
-    @objc public static var endpoint: String?
+    
+    enum Domain: String {
+        case prod = "prod"
+        case dev = "dev"
+        case staging = "staging"
+    }
+    
+    @objc public static var webEndpoint: String?
+    @objc public static var apiEndpoint: String?
     @objc public static var appID: String?
     @objc public static var defaultSendCountry: String?
     @objc public static var defaultReceiveCountry: String?
@@ -26,11 +34,36 @@ public enum RemitlyCeError: Error {
     @objc public static var ceVersion: String {
         RemitlyCeVersion()
     }
+    
+    internal static var domain: Domain = .prod
+    
+    internal static var deviceEnvironmentId: String? {
+        get {
+            return UserDefaults.standard.string(forKey: "com.remitly.deid")
+        }
+        set {
+            UserDefaults.standard.setValue(newValue, forKey: "com.remitly.deid")
+        }
+    }
 
     @objc public static func loadConfig() {
         let options = Bundle.main.infoDictionary?["remitly"] as? NSDictionary
-        if let endpoint = options?["endpoint"] as? String {
-            self.endpoint = endpoint
+
+        if let domain = Domain(rawValue: options?["domain"] as? String ?? Domain.prod.rawValue) {
+            self.domain = domain
+        }
+        
+        var domainOptions = options
+        if (domain != .prod) {
+            domainOptions = options?[domain.rawValue] as? NSDictionary
+        }
+        
+        if let webEndpoint = domainOptions?["webEndpoint"] as? String {
+            self.webEndpoint = webEndpoint
+        }
+
+        if let apiEndpoint = domainOptions?["apiEndpoint"] as? String {
+            self.apiEndpoint = apiEndpoint
         }
 
         if let appID = options?["appID"] as? String {
@@ -46,12 +79,22 @@ public enum RemitlyCeError: Error {
         }
     }
     
-    internal static var url: URL {
+    internal static var apiUrl: URL {
+        get throws {
+            let endpoint = self.apiEndpoint ?? "https://api.remitly.io/"
+            guard let url = URL(string: endpoint) else {
+                throw RemitlyCeError.invalidEndpoint
+            }
+            return url
+        }
+    }
+    
+    internal static var webUrl: URL {
         get throws {
             guard let appID = appID else {
                 throw RemitlyCeError.invalidAppID
             }
-            guard var components = URLComponents(string: endpoint!) else {
+            guard var components = URLComponents(string: webEndpoint!) else {
                 throw RemitlyCeError.invalidEndpoint
             }
             if components.scheme == nil {

@@ -27,15 +27,15 @@ RemitlyCE can be added to your app with as little as two lines of code.
 
 ### Configuration
 
-At minimum, RemitlyCE needs to be configured with your assigned `AppID` and `endpoint` values.   These can be configured in code or provided in your app's `Info.plist` (recommended):
+At minimum, RemitlyCE needs to be configured with your assigned `AppID` and `webEndpoint` values.   These can be configured in code or provided in your app's `Info.plist` (recommended):
 
 ```
     <key>remitly</key>
     <dict>
         <key>appID</key>
         <string>YOUR_APP_ID_HERE</string>
-        <key>endpoint</key>
-        <string>YOUR_ENDPOINT_URL_HERE</string>
+        <key>webEndpoint</key>
+        <string>YOUR_WEB_ENDPOINT_URL_HERE</string>
     </dict>
 ```
 
@@ -58,7 +58,8 @@ Alternatively, configuration values may be set in code:
 | Property              | Description                                                              | Type   | Required | Default Value                 | Access     |
 |-----------------------|--------------------------------------------------------------------------|--------|----------|-------------------------------|------------|
 | appID                 | Provided by Remitly                                                      | string | [x]      |                               | read/write |
-| endpoint              | Provided by Remitly                                                      | string | [x]      |                               | read/write |
+| webEndpoint           | Provided by Remitly                                                      | string | [x]      |                               | read/write |
+| apiEndpoint           | Provided by Remitly                                                      | string | [ ]      |                               | read/write |
 | defaultSendCountry    | 3-letter ISO country code                                                | string | [ ]      | USA                           | read/write |
 | defaultReceiveCountry | 3-letter ISO country code                                                | string | [ ]      | PHL                           | read/write |
 | customerEmail         | Will prepopulate the end-user login screen                               | string | [ ]      |                               | read/write |

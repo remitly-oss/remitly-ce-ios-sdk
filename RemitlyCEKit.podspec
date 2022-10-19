@@ -1,7 +1,7 @@
 Pod::Spec.new do |s|
     s.name         = "RemitlyCEKit"
     s.version      = "0.1.0"
-    s.license      = { :type => 'COMMERCIAL', :file => 'LICENSE' }
+    s.license      = { :type => 'MIT', :file => 'LICENSE' }
     s.homepage     = "https://github.com/Remitly/remitly-ce-ios-sdk"
     s.authors      = { 'Nick Hodapp' => 'nick@remitly.com' }
     s.summary      = "Remitly Connected Experiences SDK for iOS.   Send money with Remitly within your application."

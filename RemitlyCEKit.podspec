@@ -5,7 +5,7 @@ Pod::Spec.new do |s|
     s.homepage     = "https://github.com/Remitly/remitly-ce-ios-sdk"
     s.authors      = { 'Nick Hodapp' => 'nick@remitly.com' }
     s.summary      = "Remitly Connected Experiences SDK for iOS.   Send money with Remitly within your application."
-    s.source       =  { :git => "https://github.com/Remitly/remitly-ce-ios-sdk/RemitlyCEKit" }
+    s.source       =  { :git => "https://github.com/Remitly/remitly-ce-ios-sdk.git" }
     s.platform     = :ios, "13.0"
     s.swift_version = "5"
     s.source_files = 'RemitlyCEKit/*.{h,m,swift}'

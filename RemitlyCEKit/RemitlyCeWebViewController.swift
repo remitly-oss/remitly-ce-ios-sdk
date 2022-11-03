@@ -45,7 +45,7 @@ class RemitlyCeWebViewController: UIViewController, WKNavigationDelegate, WKScri
     @IBOutlet private var errorImageLabel: UILabel!
     private var url: URL!
     private var webView: WKWebView!
-    public var delegate: RemitlyCeViewControllerDelegate?
+    public weak var delegate: RemitlyCeViewControllerDelegate?
     private var isCloseButtonHidden = true
     private var isActivityOverlayHidden: Bool {
         get {

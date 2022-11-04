@@ -38,7 +38,7 @@ import UIKit
         }
         set (style) { /* noop */ }
     }
-   
+    
     public override func viewDidLoad() {
         super.viewDidLoad()
         let embedVc: UIViewController = self.isBeingPresented ? UINavigationController(rootViewController: ceWebViewController) : ceWebViewController
@@ -49,9 +49,9 @@ import UIKit
         embedVc.didMove(toParent: self)
     }
     
-    public override func didMove(toParent parent: UIViewController?) {
-        super.didMove(toParent: parent)
-        if (parent == nil) {
+    public override func viewDidDisappear(_ animated: Bool) {
+        super.viewDidDisappear(animated)
+        if (isBeingDismissed) {
             self.delegate?.onDismissed?()
         }
     }
@@ -65,25 +65,28 @@ import UIKit
         return rvc
     }
     
-    @objc public static func logout() -> Bool {
+    @objc public static func logout() -> Void {
         if let webUrl = try? RemitlyCeConfiguration.webUrl {
             if let cookies = HTTPCookieStorage.shared.cookies(for: webUrl),
                let token = cookies.first(where: { cookie in
                    cookie.name == "token"
-               }) {
+               }),
+               let gr = cookies.first(where: { cookie in
+                   cookie.name == "gr"
+               })
+            {
                 if let apiUrl = try? RemitlyCeConfiguration.apiUrl,
                    let logoutURL = URL(string: "v1/auth/logout", relativeTo: apiUrl)
                 {
                     var request = URLRequest(url: logoutURL)
                     request.httpMethod = "POST"
                     request.setValue("Bearer \(token.value)", forHTTPHeaderField: "Authorization")
+                    request.setValue(gr.value, forHTTPHeaderField: "X-Remitly-GlobalRiskPublicId")
+                    request.setValue(RemitlyCeConfiguration.deviceEnvironmentId, forHTTPHeaderField: "Remitly-DeviceEnvironmentID")
                     URLSession.shared.dataTask(with: request).resume()
                 }
                 HTTPCookieStorage.shared.deleteCookie(token)
             }
         }
-        
-        return true
     }
 }
-

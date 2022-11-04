@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
     s.name         = "RemitlyCEKit"
-    s.version      = "0.1.2"
+    s.version      = "0.1.3"
     s.license      = { :type => 'MIT', :file => 'LICENSE' }
     s.homepage     = "https://github.com/Remitly/remitly-ce-ios-sdk"
     s.authors      = { 'Nick Hodapp' => 'nick@remitly.com' }

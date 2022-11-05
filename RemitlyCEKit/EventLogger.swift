@@ -59,8 +59,6 @@ internal class EventLogger {
                 "data": AnyCodable(data),
                 "@timestamp": timestamp,
                 "device_environment_id": AnyCodable(RemitlyCeConfiguration.deviceEnvironmentId),
-                "topic": topic,
-                "data": AnyCodable(data),
                 "forge": [
                     "app": "remitly-client",
                     "domain": RemitlyCeConfiguration.domain.rawValue,

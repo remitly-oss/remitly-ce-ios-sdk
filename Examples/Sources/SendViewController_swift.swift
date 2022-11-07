@@ -41,7 +41,7 @@ class SendViewController_swift: UIViewController, RemitlyCeViewControllerDelegat
         rvc.delegate = self
     }
     
-    override func onUserActivity() {
+    func onUserActivity() {
         guard let eventsLog = eventsLog else {
             return
         }

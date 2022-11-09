@@ -24,8 +24,11 @@ public enum RemitlyCeError: Error {
         case staging = "staging"
     }
     
-    @objc public static var webEndpoint: String?
-    @objc public static var apiEndpoint: String?
+    private static let prodWebHost = "www.remitly.com"
+    private static let prodApiHost = "api.remitly.io"
+    
+    @objc public static var webHost: String?
+    @objc public static var apiHost: String?
     @objc public static var appID: String?
     @objc public static var defaultSendCountry: String?
     @objc public static var defaultReceiveCountry: String?
@@ -35,7 +38,16 @@ public enum RemitlyCeError: Error {
         RemitlyCeVersion()
     }
     
-    internal static var domain: Domain = .prod
+    internal static var domain: Domain {
+        switch (try? apiUrl.host, try? webUrl.host)  {
+        case (prodApiHost, prodWebHost):
+            return .prod
+        case (.some(let a), .some(let w)) where a.contains("preprod") && w.contains("preprod"):
+            return .staging
+        default:
+            return .dev
+        }
+    }
     
     internal static var deviceEnvironmentId: String? {
         get {
@@ -49,21 +61,17 @@ public enum RemitlyCeError: Error {
     @objc public static func loadConfig() {
         let options = Bundle.main.infoDictionary?["remitly"] as? NSDictionary
 
-        if let domain = Domain(rawValue: options?["domain"] as? String ?? Domain.prod.rawValue) {
-            self.domain = domain
-        }
-        
         var domainOptions = options
         if (domain != .prod) {
             domainOptions = options?[domain.rawValue] as? NSDictionary
         }
         
-        if let webEndpoint = domainOptions?["webEndpoint"] as? String {
-            self.webEndpoint = webEndpoint
+        if let webHost = domainOptions?["webHost"] as? String {
+            self.webHost = webHost
         }
 
-        if let apiEndpoint = domainOptions?["apiEndpoint"] as? String {
-            self.apiEndpoint = apiEndpoint
+        if let apiHost = domainOptions?["apiHost"] as? String {
+            self.apiHost = apiHost
         }
 
         if let appID = options?["appID"] as? String {
@@ -81,8 +89,10 @@ public enum RemitlyCeError: Error {
     
     internal static var apiUrl: URL {
         get throws {
-            let endpoint = self.apiEndpoint ?? "https://api.remitly.io/"
-            guard let url = URL(string: endpoint) else {
+            var components = URLComponents()
+            components.scheme = "https"
+            components.host = self.apiHost ?? self.prodApiHost
+            guard let url = components.url else {
                 throw RemitlyCeError.invalidEndpoint
             }
             return url
@@ -94,12 +104,10 @@ public enum RemitlyCeError: Error {
             guard let appID = appID else {
                 throw RemitlyCeError.invalidAppID
             }
-            guard var components = URLComponents(string: webEndpoint!) else {
-                throw RemitlyCeError.invalidEndpoint
-            }
-            if components.scheme == nil {
-                throw RemitlyCeError.invalidEndpoint
-            }
+            var components = URLComponents()
+            components.scheme = "https"
+            components.host = self.webHost ?? self.prodWebHost
+            components.scheme = "https"
             if (defaultSendCountry != nil && defaultSendCountry?.count != 3) {
                 throw RemitlyCeError.invalidSendCountry
             }

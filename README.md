@@ -58,8 +58,8 @@ Alternatively, configuration values may be set in code:
 | Property              | Description                                                              | Type   | Required | Default Value                 | Access     |
 |-----------------------|--------------------------------------------------------------------------|--------|----------|-------------------------------|------------|
 | appID                 | Provided by Remitly                                                      | string | [x]      |                               | read/write |
-| webEndpoint           | Provided by Remitly                                                      | string | [x]      |                               | read/write |
-| apiEndpoint           | Provided by Remitly                                                      | string | [ ]      |                               | read/write |
+| webHost               | Provided by Remitly                                                      | string | [ ]      |                               | read/write |
+| apiHost               | Provided by Remitly                                                      | string | [ ]      |                               | read/write |
 | defaultSendCountry    | 3-letter ISO country code                                                | string | [ ]      | USA                           | read/write |
 | defaultReceiveCountry | 3-letter ISO country code                                                | string | [ ]      | PHL                           | read/write |
 | customerEmail         | Will prepopulate the end-user login screen                               | string | [ ]      |                               | read/write |
@@ -112,7 +112,4 @@ The RemitlyCeViewController optionally notifies an associated delegate of certai
 |------------------------|---------------------------------------------------------------------|
 | onUserActivity         | Triggered frequently as the user interacts with the RemitlyCE UI.   |
 | onTransactionSubmitted | Triggered when the user successfully submits a transaction request. |
-
-
-
 

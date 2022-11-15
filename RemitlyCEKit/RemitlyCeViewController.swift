@@ -1,6 +1,6 @@
 //
 //  RemitlyCeViewController.swift
-//  RemitlyCE
+//  RemitlyCEKit
 //
 //  Created by Nick Hodapp on 8/22/22.
 //

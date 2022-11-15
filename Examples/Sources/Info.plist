@@ -5,9 +5,7 @@
 	<key>remitly</key>
 	<dict>
 		<key>appID</key>
-		<string>demo</string>
-		<key>webHost</key>
-		<string>www.remitly.com</string>
+		<string>app_7nVPijUnbBreiULsJPFG2X3</string>
 		<key>defaultSendCountry</key>
 		<string>USA</string>
 	</dict>

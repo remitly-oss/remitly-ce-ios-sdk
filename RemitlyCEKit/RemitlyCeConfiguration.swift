@@ -61,16 +61,11 @@ public enum RemitlyCeError: Error {
     @objc public static func loadConfig() {
         let options = Bundle.main.infoDictionary?["remitly"] as? NSDictionary
 
-        var domainOptions = options
-        if (domain != .prod) {
-            domainOptions = options?[domain.rawValue] as? NSDictionary
-        }
-        
-        if let webHost = domainOptions?["webHost"] as? String {
+        if let webHost = options?["webHost"] as? String {
             self.webHost = webHost
         }
 
-        if let apiHost = domainOptions?["apiHost"] as? String {
+        if let apiHost = options?["apiHost"] as? String {
             self.apiHost = apiHost
         }
 

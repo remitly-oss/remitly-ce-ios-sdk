@@ -1,6 +1,6 @@
 //
 //  SendViewController_objc.h
-//  SendWithRemitly
+//  RemitlyCeExample
 //
 //  Created by Nick Hodapp on 9/29/22.
 //

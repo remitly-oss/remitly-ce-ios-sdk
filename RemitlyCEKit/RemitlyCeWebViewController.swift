@@ -106,12 +106,21 @@ class RemitlyCeWebViewController: UIViewController, WKNavigationDelegate, WKScri
         self.url = url
 
         navigationItem.hidesBackButton = true
-        navigationItem.rightBarButtonItem = UIBarButtonItem(
-            image: UIImage(systemName: "xmark"),
-            style: .done,
-            target: self,
-            action: #selector(handleClose)
-        )
+        
+        if #available(iOS 13.0, *) {
+            navigationItem.rightBarButtonItem = UIBarButtonItem(
+                image: UIImage(systemName: "xmark"),
+                style: .done,
+                target: self,
+                action: #selector(handleClose)
+            )
+        } else {
+            navigationItem.rightBarButtonItem = UIBarButtonItem(
+                barButtonSystemItem: .stop, // 'X' image pre iOS 13
+                target: self,
+                action: #selector(handleClose)
+            )
+         }
     }
 
     internal required init?(coder: NSCoder) {
@@ -141,7 +150,9 @@ class RemitlyCeWebViewController: UIViewController, WKNavigationDelegate, WKScri
         wvc.suppressesIncrementalRendering = true
         wvc.dataDetectorTypes = []
         wvc.websiteDataStore = WKWebsiteDataStore.nonPersistent()
-        wvc.defaultWebpagePreferences.preferredContentMode = .mobile
+        if #available(iOS 13.0, *) {
+            wvc.defaultWebpagePreferences.preferredContentMode = .mobile
+        }
         
         wvc.userContentController.add(self, name: NarwhalMessageKey.handler.rawValue)
         wvc.userContentController.addUserScript(postMessageScript)
@@ -179,10 +190,11 @@ class RemitlyCeWebViewController: UIViewController, WKNavigationDelegate, WKScri
         self.isLoading = false;
     }
     
-    func webView(_ webView: WKWebView, decidePolicyFor navigationAction: WKNavigationAction) async -> WKNavigationActionPolicy {
+    func webView(_ webView: WKWebView, decidePolicyFor navigationAction: WKNavigationAction, decisionHandler: @escaping (WKNavigationActionPolicy) -> Void) {
         
         guard let destinationUrl = navigationAction.request.url else {
-            return .allow
+            decisionHandler(.allow);
+            return;
         }
         
         // open in a new controller if we're navigating to a receipt (that isn't already being shown)
@@ -192,7 +204,8 @@ class RemitlyCeWebViewController: UIViewController, WKNavigationDelegate, WKScri
             destinationUrl.path.contains("/receipt/")
         {
             presentCE(destinationUrl)
-            return .cancel
+            decisionHandler(.cancel)
+            return;
         }
         
         // certain links open in Safari controller
@@ -208,10 +221,11 @@ class RemitlyCeWebViewController: UIViewController, WKNavigationDelegate, WKScri
             return destinationUrl.absoluteString.contains($0)
         }) {
             presentSafari(destinationUrl)
-            return .cancel
+            decisionHandler(.cancel);
+            return;
         }
-                
-        return .allow
+
+        decisionHandler(.allow);
     }
     
     func userContentController(_: WKUserContentController, didReceive message: WKScriptMessage) {
@@ -273,6 +287,24 @@ class RemitlyCeWebViewController: UIViewController, WKNavigationDelegate, WKScri
                         group.leave()
                     }
                 }
+                
+                // This cookie is needed for Portal to redirect users to the correct landing pages
+                if let webUrl = try? RemitlyCeConfiguration.webUrl {
+                    let cookieProps: [HTTPCookiePropertyKey : Any] = [
+                        HTTPCookiePropertyKey.domain: self.url.host as Any,
+                        HTTPCookiePropertyKey.path: "/",
+                        HTTPCookiePropertyKey.name: "ce_login_redirect",
+                        HTTPCookiePropertyKey.value: webUrl.lastPathComponent + "?" + (webUrl.query ?? ""),
+                    ]
+
+                    if let loginRedirectCookie = HTTPCookie(properties: cookieProps) {
+                        group.enter()
+                        self.webView.configuration.websiteDataStore.httpCookieStore.setCookie(loginRedirectCookie) {
+                            group.leave()
+                        }
+                    }
+                }
+
                 group.notify(queue: DispatchQueue.main) {
                     completion?()
                 }

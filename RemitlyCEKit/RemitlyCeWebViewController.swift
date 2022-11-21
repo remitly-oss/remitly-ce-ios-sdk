@@ -289,12 +289,16 @@ class RemitlyCeWebViewController: UIViewController, WKNavigationDelegate, WKScri
                 }
                 
                 // This cookie is needed for Portal to redirect users to the correct landing pages
-                if let webUrl = try? RemitlyCeConfiguration.webUrl {
+                if let webUrl = try? RemitlyCeConfiguration.webUrl
+                {
+                    // take the send-country and the appid
+                    let pathComponents = webUrl.pathComponents.suffix(2).joined(separator: "/")
+                                    
                     let cookieProps: [HTTPCookiePropertyKey : Any] = [
                         HTTPCookiePropertyKey.domain: self.url.host as Any,
                         HTTPCookiePropertyKey.path: "/",
                         HTTPCookiePropertyKey.name: "ce_login_redirect",
-                        HTTPCookiePropertyKey.value: webUrl.lastPathComponent + "?" + (webUrl.query ?? ""),
+                        HTTPCookiePropertyKey.value: pathComponents + "?" + (webUrl.query ?? ""),
                     ]
 
                     if let loginRedirectCookie = HTTPCookie(properties: cookieProps) {

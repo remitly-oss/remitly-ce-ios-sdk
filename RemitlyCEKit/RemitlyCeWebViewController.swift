@@ -138,6 +138,9 @@ class RemitlyCeWebViewController: UIViewController, WKNavigationDelegate, WKScri
             window.cesdk = {
               postMessage: function (data) {
                   window.webkit.messageHandlers.cesdk.postMessage(JSON.parse(data));
+              },
+              config: {
+                  email: "\(RemitlyCeConfiguration.customerEmail ?? "")"
               }
             }
             """,

@@ -113,11 +113,6 @@ public enum RemitlyCeError: Error {
                 URLQueryItem(name: "utm_medium", value: "channelpartner"),
                 URLQueryItem(name: "utm_source", value: appID)
             ]
-            if let customerEmail = customerEmail {
-                components.queryItems?.append(
-                    URLQueryItem(name: "email_prefill", value: customerEmail.addingPercentEncoding(withAllowedCharacters: .alphanumerics))
-                )
-            }
             guard var url = components.url else {
                 throw RemitlyCeError.invalidConfiguration
             }
